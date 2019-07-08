@@ -28,8 +28,9 @@ hs_err_pid*
 .settings/
 .classpath
 .project
+.gitignore
 mvnw
 mvnw.cmd
 HELP.md
 target/
-src/main/resources/application.properties
+src/main/resources/templates/application.properties

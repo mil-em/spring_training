@@ -33,9 +33,10 @@ public class MainController {
 	}
 	
 	
-	@GetMapping(path="/all")
-	public @ResponseBody Iterable<User> getAllUsers(){
-		return userRepository.findAll();
+	@GetMapping("/displayAll")
+	public String displayAllUsers(Model model) {
+		
+		model.addAttribute("userList", userRepository.findAll());
+		return "userList";
 	}
-	
 }
