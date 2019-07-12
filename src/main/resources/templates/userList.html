@@ -1,35 +1,39 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+	xmlns:th="http://www.thymeleaf.org">
 
-  <head>
-    <title>List of my Users</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <link href="../static/css/Style.css" th:href="@{/css/Style.css}" rel="stylesheet" />
-   </head>
+<head>
+<title>List of my Users</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../static/css/Style.css" th:href="@{/css/Style.css}"
+	rel="stylesheet" />
+</head>
 
-  <body>
+<body>
 
-    <h1>User list</h1>
-  
-    <table class="cinereousTable">
-      <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Email</th>
-      </tr>
-      <tr th:each="user : ${userList}">
-        <td th:text="${user.id}">0</td>
-        <td th:text="${user.name}">name</td>
-        <td th:text="${user.email}">email.email.com</td>
-      </tr>
-    </table>
-  
-    <p>
-      <a href="/add">Return to adding a user</a>
-    </p>
+	<h1>User list</h1>
 
-  </body>
+	<table class="blueTable">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Email</th>
+			</tr>
+		</thead>
+		<tr th:each="user : ${userList}">
+			<td th:text="${user.id}">0</td>
+			<td th:text="${user.name}">name</td>
+			<td th:text="${user.email}">email.email.com</td>
+		</tr>
+	</table>
+
+
+	<button class="myButton" onclick="window.location.href = '/add';">Return
+		to adding a user</button>
+
+
+</body>
 
 </html>

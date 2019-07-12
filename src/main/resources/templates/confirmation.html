@@ -3,13 +3,17 @@
 <head>
     <title>User added successfully</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="../static/css/Style.css" th:href="@{/css/Style.css}"
+	rel="stylesheet" />
 </head>
 <body>
 	<h1>User added:</h1>
     <p th:text="'id: ' + ${user.id}" />
     <p th:text="'name: ' + ${user.name}" />
     <p th:text="'email: ' + ${user.email}" />
-    
-    <a href="/add">Back to main Page</a>
+
+	
+		<button class="myButton" onclick="window.location.href = '/add';">Return to adding a user</button>
+	
 </body>
 </html>
