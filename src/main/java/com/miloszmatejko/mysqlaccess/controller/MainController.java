@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.miloszmatejko.mysqlaccess.entity.User;
 import com.miloszmatejko.mysqlaccess.repos.UserRepository;
@@ -59,5 +60,37 @@ public class MainController {
 		return "userList";
 	}
 	
+	@GetMapping("/deleteUser")
+	public String deleteUser(Model model) {
+		model.addAttribute("user", new User());
+		return "userDeletion";
+	}
+	
+	@PostMapping("/deleteById")
+	public @ResponseBody String deleteUserById(@RequestParam Integer id, Model model) {
+		
+		
+		
+		userRepository.deleteById(id);
+	
+		return "user with an id of " + id + " deleted.";
+	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

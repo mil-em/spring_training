@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Find User by ID</title>
+<title>List of my Users</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../static/css/Style.css" th:href="@{/css/Style.css}"
+	rel="stylesheet" />
+</head>
+<body>
+
+<form action="#" th:action=@{/deleteById} th:object="${user}"
+		method="post">
+		<p>
+			Id: <input type="text" th:field="*{id}" />
+		</p>
+		<p>
+		<input type="submit" value="Delete"/> <input type="reset" value="Reset">
+	</form>
+
+<button class="myButton" onclick="window.location.href = '/add';">Return to adding a user</button>
+
+</body>
+</html>
